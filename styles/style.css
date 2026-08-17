@@ -1,0 +1,54 @@
+html {
+  /* px signifie "pixels". La taille de police de base est maintenant de 10
+     pixels de haut */
+  font-size: 10px;
+  /* Remplacez EMPLACEMENT par la valeur de la propriété font-family obtenue
+     depuis Google Fonts */
+  font-family: "Montserrat", sans-serif;
+ 
+  h1 {
+  font-size: 45px;
+  text-align: center;
+    }
+
+ 
+p,
+li {
+  font-size: 19px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+g {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+  background-color: rgb(62 130 142);
+
+
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: rgb(60 211 201);
+  text-shadow: 3px 3px 1px rgb(29 11 122);
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+    padding: 25px 0;
+  color: rgb(60 211 201);
+  text-shadow: 3px 3px 1px rgb(29 11 122);
+}
+
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+}
