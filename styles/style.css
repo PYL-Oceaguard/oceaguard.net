@@ -1,54 +1,131 @@
 html {
-  /* px signifie "pixels". La taille de police de base est maintenant de 10
-     pixels de haut */
-  font-size: 10px;
-  /* Remplacez EMPLACEMENT par la valeur de la propriété font-family obtenue
-     depuis Google Fonts */
-  font-family: "Montserrat", sans-serif;
- 
-  h1 {
-  font-size: 45px;
-  text-align: center;
-    }
-
- 
-p,
-li {
-  font-size: 19px;
-  line-height: 1;
-  text-align: center;
-  letter-spacing: 1px;
+    font-size: 10px;
+    font-family: "Roboto", sans-serif;
 }
 
-g {
-  font-size: 21px;
-  font-weight: bold;
+body {
+    background-color: rgb(62 130 142);
 }
 
-  background-color: rgb(62 130 142);
-
-
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 h1 {
-  margin: 0;
-  padding: 20px 0;
-  color: rgb(60 211 201);
-  text-shadow: 3px 3px 1px rgb(29 11 122);
+    font-size: 45px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: rgb(60 211 201);
+    text-shadow: 3px 3px 1px rgb(29 11 122);
 }
 
 h2 {
-  text-align: center;
-  font-size: 30px;
+    text-align: center;
+    font-size: 30px;
     padding: 25px 0;
-  color: rgb(60 211 201);
-  text-shadow: 3px 3px 1px rgb(29 11 122);
+    color: rgb(60 211 201);
+    text-shadow: 3px 3px 1px rgb(29 11 122);
 }
 
+p,
+li {
+    font-size: 19px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 1px;
+}
 
 img {
-  display: block;
-  margin: 0 auto;
-  max-width: 60%;
+    display: block;
+    margin: 0 auto;
+    max-width: 60%;
 }
 
+.fini {
+    color: darkseagreen;
+    text-decoration: line-through solid black 2px;
+}
+
+.indicators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicator {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 0 1 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}
+
+.indicator h3 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.indicator p {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.indicator p.indicator-status {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+.status {
+    background-color: white;
+    margin: 30px 10px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}
+
+.status p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+.status-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .indicator {
+        flex: 1 1 100%;
+    }
+
+    .indicator p {
+        font-size: 28px;
+    }
+
+    .indicator p.indicator-status {
+        font-size: 14px;
+    }
 }
