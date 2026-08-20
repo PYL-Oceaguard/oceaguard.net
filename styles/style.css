@@ -6,6 +6,7 @@ html {
 body {
     background-color: rgb(62 130 142);
 }
+  
 
 .container {
     max-width: 1200px;
@@ -50,18 +51,16 @@ img {
 }
 
 .indicators {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
 
 .indicator {
     background-color: white;
     padding: 20px;
-    margin: 10px;
+    margin: 0;
     text-align: center;
-    flex: 0 1 200px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
 }
@@ -107,25 +106,22 @@ img {
     margin: 10px 0 0 0;
 }
 
+.indicator-status.normal {
+    color: green;
+}
+
+.indicator-status.vigilance {
+    color: orange;
+}
+
+.indicator-status.alerte {
+    color: red;
+}
+
+
 @media (max-width: 600px) {
-
-    h1 {
-        font-size: 30px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    .indicator {
-        flex: 1 1 100%;
-    }
-
-    .indicator p {
-        font-size: 28px;
-    }
-
-    .indicator p.indicator-status {
-        font-size: 14px;
+    .indicators {
+        grid-template-columns: 1fr;
     }
 }
+
