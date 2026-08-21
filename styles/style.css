@@ -1,127 +1,514 @@
-html {
-    font-size: 10px;
+/* ===============================
+   BASE
+   =============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
     font-family: "Roboto", sans-serif;
 }
 
 body {
-    background-color: rgb(62 130 142);
-}
-  
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    background: #061f34;
+    color: white;
 }
 
-h1 {
-    font-size: 45px;
-    text-align: center;
-    margin: 0;
-    padding: 20px 0;
-    color: rgb(60 211 201);
-    text-shadow: 3px 3px 1px rgb(29 11 122);
-}
 
-h2 {
-    text-align: center;
-    font-size: 30px;
-    padding: 25px 0;
-    color: rgb(60 211 201);
-    text-shadow: 3px 3px 1px rgb(29 11 122);
-}
+/* ===============================
+   STRUCTURE GÉNÉRALE
+   =============================== */
 
-p,
-li {
-    font-size: 19px;
-    line-height: 1;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 60%;
-}
-
-.fini {
-    color: darkseagreen;
-    text-decoration: line-through solid black 2px;
-}
-
-.indicators {
+.app-dashboard {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 190px 1fr;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   MENU LATÉRAL
+   =============================== */
+
+.sidebar {
+    background: #061a2b;
+    border-right: 1px solid rgba(91, 203, 232, 0.20);
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px 12px;
+}
+
+.sidebar-logo {
+    padding: 5px 8px 22px;
+}
+
+.sidebar-logo img {
+    width: 145px;
+    max-width: 100%;
+    display: block;
+}
+
+
+/* MENU */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar-menu a {
+    color: #c5d6e3;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    padding: 11px 10px;
+
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(32, 180, 220, 0.12);
+    color: white;
+}
+
+.sidebar-menu a.active {
+    background: #0b5577;
+    color: white;
+}
+
+
+/* DÉCONNEXION */
+
+.logout {
+    margin-top: auto;
+
+    color: #7991a2;
+    text-decoration: none;
+
+    font-size: 13px;
+
+    padding: 10px;
+}
+
+
+/* ===============================
+   CONTENU PRINCIPAL
+   =============================== */
+
+.dashboard-content {
+    padding: 14px 20px 16px;
+    min-width: 0;
+}
+
+
+/* ===============================
+   EN-TÊTE
+   =============================== */
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.port-info {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.port-label {
+    font-size: 14px;
+    color: #8fa8b8;
+}
+
+.port-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+.dashboard-heading {
+    text-align: left;
+}
+
+.dashboard-heading h1 {
+    margin: 0;
+    font-size: 27px;
+    color: #2478a8;
+}
+
+.dashboard-heading p {
+    margin: 2px 0 0;
+    font-size: 14px;
+    color: #5bcbe8;
+}
+
+
+/* ===============================
+   PARTIE HAUTE
+   =============================== */
+
+.dashboard-top {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 3fr)
+        minmax(190px, 1fr);
+
     gap: 10px;
 }
 
-.indicator {
-    background-color: white;
-    padding: 20px;
-    margin: 0;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+
+/* ===============================
+   CARTES
+   =============================== */
+
+.main-chart-card,
+.quality-card,
+.measure-card,
+.alerts-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 49, 78, 0.96),
+            rgba(4, 30, 50, 0.98)
+        );
+
+    border:
+        1px solid rgba(91, 203, 232, 0.30);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.25);
 }
 
-.indicator h3 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
+
+/* ===============================
+   GRAND GRAPHIQUE
+   =============================== */
+
+.main-chart-card {
+    padding: 12px 14px;
+}
+
+.main-chart-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+    font-weight: 500;
+
     text-transform: uppercase;
-    letter-spacing: 1px;
+
+    color: #dceaf2;
 }
 
-.indicator p {
-    font-size: 28px;
-    font-weight: bold;
+.main-chart-container {
+    position: relative;
+
+    width: 100%;
+    height: 230px;
+}
+
+
+/* ===============================
+   QUALITÉ DE L'EAU
+   =============================== */
+
+.quality-card {
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.quality-card h2 {
     margin: 0;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    color: #dceaf2;
+}
+
+
+/* CERCLE */
+
+.quality-circle {
+
+    width: 150px;
+    height: 150px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    border: 12px solid #43b866;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.30);
+}
+
+.quality-score {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.quality-score span {
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #b9cbd6;
+}
+
+.quality-label {
+    margin-top: 5px;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    color: #48cf69;
+}
+
+.quality-alert {
+    margin-top: 8px;
+    padding-top: 8px;
+
+    border-top: 1px solid rgba(91, 203, 232, 0.20);
+
     text-align: center;
 }
 
-.indicator p.indicator-status {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 5px 0;
+.quality-alert .status-message {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.3;
+
 }
 
-.status {
-    background-color: white;
-    margin: 30px 10px;
-    padding: 25px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+.status-message.normal {
+    color: #4dcc70;
 }
 
-.status p {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px 0 0 0;
+.status-message.vigilance {
+    color: #f0a22e;
 }
 
-.status-message {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0 0 0;
+.status-message.alerte {
+    color: #ff5555;
 }
+
+
+/* ===============================
+   CARTES DES MESURES
+   =============================== */
+
+.measure-cards {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 9px;
+}
+
+
+.measure-card,
+.alerts-card {
+    padding: 10px;
+
+    min-width: 0;
+}
+
+
+.measure-card h3,
+.alerts-card h3 {
+
+    margin: 0 0 7px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    color: #c9dbe6;
+}
+
+
+.measure-value {
+
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: 500;
+
+    color: #eaf5fa;
+}
+
+
+.indicator-status {
+
+    margin: 5px 0 0;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* ===============================
+   COULEURS DES STATUTS
+   =============================== */
 
 .indicator-status.normal {
-    color: green;
+    color: #4dcc70;
 }
 
 .indicator-status.vigilance {
-    color: orange;
+    color: #f0a22e;
 }
 
 .indicator-status.alerte {
-    color: red;
+    color: #ff5555;
 }
 
 
-@media (max-width: 600px) {
-    .indicators {
-        grid-template-columns: 1fr;
+/* ===============================
+   ALERTES
+   =============================== */
+
+.alerts-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-message {
+
+    margin: auto 0;
+
+    font-size: 13px;
+    line-height: 1.35;
+
+    color: #4dcc70;
+}
+
+
+/* ===============================
+   MINI GRAPHIQUES
+   =============================== */
+
+.mini-charts {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.measure-card,
+.mini-charts > div {
+    width: 100%;
+    min-width: 0;
+}
+
+.mini-charts > div {
+
+    height: 75px;
+
+    padding: 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 49, 78, 0.96),
+            rgba(4, 30, 50, 0.98)
+        );
+
+    border:
+        1px solid rgba(91, 203, 232, 0.25);
+
+    border-radius: 8px;
+
+    min-width: 0;
+
+    cursor: pointer;
+}
+
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 950px) {
+
+    .app-dashboard {
+        grid-template-columns: 150px 1fr;
+    }
+
+    .sidebar-logo img {
+        width: 120px;
+    }
+
+    .measure-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mini-charts {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
+
+@media (max-width: 700px) {
+
+    .app-dashboard {
+        display: block;
+    }
+
+    .sidebar {
+        min-height: auto;
+    }
+
+    .sidebar-menu {
+        display: none;
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .dashboard-top {
+        grid-template-columns: 1fr;
+    }
+
+    .measure-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mini-charts {
+        grid-template-columns: 1fr 1fr;
+    }
+}

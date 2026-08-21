@@ -2,133 +2,81 @@
 <html lang="fr">
 
 <head>
-    <link href="styles/style.css" rel="stylesheet" />
-
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OCEAGuard — Surveillance de la qualité de l'eau</title>
+    <title>OCEAGuard — Connexion</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    />
 
-    <script defer src="scripts/main.js"></script>
+    <link href="styles/login.css" rel="stylesheet" />
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="login-page">
 
-       
-        <h1>Un suivi simple et fiable de la qualité de l’eau</h1>
+        <div class="login-box">
 
-                <img
-            src="images/Logo Titre OceaGuard.png"
-            alt="Logo OCEAGuard"
-        />
- 
-        <p>
-            La réglementation prévoit de sanctionner toute atteinte à la qualité
-            des eaux et des installations des ports
-            (<a href="https://www.mer.gouv.fr/ports-de-plaisance-maritimes">
-                Ports propres en France
-            </a>).
-        </p>
+            <h1>Bienvenue sur OCEAGuard</h1>
 
-        <p>
-            Elle vous <strong>impose</strong> des <strong>objectifs</strong> et des
-            <strong>responsabilités</strong>, mais elle ne vous donne pas les outils
-            simples pour les piloter au quotidien.
-        </p>
-
-        <h2>OCEAGuard est là pour ça !</h2>
-
-        <p>
-            <button id="login-button">Se CONNECTER</button>
-        </p>
-
-
-        <h2>Les indicateurs suivis</h2>
-
-
-        <!-- CONTENEUR DES 5 INDICATEURS -->
-
-        <div class="indicators">
-
-            <!-- TEMPÉRATURE -->
-
-            <div class="indicator">
-                <h3>Température</h3>
-
-                <p id="temperature">18,4 °C</p>
-
-                <p id="temperature-status" class="indicator-status"></p>
-            </div>
-
-
-            <!-- PH -->
-
-            <div class="indicator">
-                <h3>pH</h3>
-
-                <p id="ph">8,1</p>
-
-                <p id="ph-status" class="indicator-status"></p>
-            </div>
-
-
-            <!-- OXYGÈNE -->
-
-            <div class="indicator">
-                <h3>Oxygène dissous</h3>
-
-                <p id="oxygen">7,8 mg/L</p>
-
-                <p id="oxygen-status" class="indicator-status"></p>
-            </div>
-
-
-            <!-- TURBIDITÉ -->
-
-            <div class="indicator">
-                <h3>Turbidité</h3>
-
-                <p id="turbidity">2,4 NTU</p>
-
-                <p id="turbidity-status" class="indicator-status"></p>
-            </div>
-
-
-            <!-- SALINITÉ -->
-
-            <div class="indicator">
-                <h3>Salinité</h3>
-
-                <p id="salinity">34,2 PSU</p>
-
-                <p id="salinity-status" class="indicator-status"></p>
-            </div>
-
-        </div>
-
-
-        <!-- ÉTAT GLOBAL DE LA QUALITÉ DE L'EAU -->
-
-        <div class="status">
-
-            <h2>État de la qualité de l'eau</h2>
-
-            <p class="status-message">
-                ✓ ERREUR - DEVRAIT PAS AFFICHER QUE TOUT EST NORMAL
+            <p class="login-subtitle">
+                Surveillance et analyse de la qualité de l'eau
             </p>
 
+            <form id="login-form">
+
+                <div class="login-fields">
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Adresse e-mail"
+                    />
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Mot de passe"
+                    />
+
+                    <button type="submit">
+                        Se connecter
+                    </button>
+
+                </div>
+
+            </form>
+
         </div>
 
-    </div>
+    </main>
+
+    <img
+    class="login-logo"
+    src="images/Logo Titre OceaGuard.png"
+    alt="OCEAGuard"
+/>
+
+    <script>
+
+        const loginForm = document.querySelector("#login-form");
+
+        loginForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            window.location.href = "dashboard.html";
+
+        });
+
+    </script>
 
 </body>
 
